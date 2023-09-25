@@ -52,7 +52,7 @@ export const App = () => {
       <Wrapper>
         <h1>Phonebook</h1>
         <AddForm addContacts={handleAddContacts} />
-        <h2>Contacts</h2>
+        <h2>Contacts!</h2>
         <Filter takeData={handleChangeFilter} filterValue={filter} />
         <Contacts filter={filteredData} deleteData={handleDeleteTodo} />
       </Wrapper>
