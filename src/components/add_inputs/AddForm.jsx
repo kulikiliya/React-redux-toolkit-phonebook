@@ -1,11 +1,15 @@
 import { useState } from 'react';
 import { FormDiv, Button, Input } from './AddForm.styled';
 import PropTypes from 'prop-types';
-import { nanoid } from 'nanoid';
+import { useDispatch } from 'react-redux';
+import { addContact } from 'redux/filter/slice';
 
-export const AddForm = ({ addContacts }) => {
+export const AddForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
+  const dispatch = useDispatch();
+
+  console.log(name);
 
   const handleInput = e => {
     const { name, value } = e.target;
@@ -25,9 +29,8 @@ export const AddForm = ({ addContacts }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    const id = nanoid();
 
-    addContacts(name, number, id);
+    dispatch(addContact(name, number));
 
     setName('');
     setNumber('');
