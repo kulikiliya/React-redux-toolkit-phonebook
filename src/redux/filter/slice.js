@@ -21,14 +21,23 @@ const slice = createSlice({
       },
 
       reducer: (state, action) => {
-        state.contacts.push(action.payload);
+        const isExist = state.contacts.find(
+          item => item.name === action.payload.name
+        );
+        if (!isExist) {
+          state.contacts.push(action.payload);
+        } else {
+          alert('Already exist');
+        }
       },
     },
+
     deleteContact: (state, action) => {
       state.contacts = state.contacts.filter(
         item => item.id !== action.payload
       );
     },
+
     filerData: (state, action) => {
       state.filter = action.payload;
     },

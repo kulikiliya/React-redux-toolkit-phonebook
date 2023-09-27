@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { FilerInput } from './Filer.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { filerData } from 'redux/filter/slice';
@@ -20,9 +19,4 @@ export const Filter = () => {
       ></FilerInput>
     </label>
   );
-};
-
-Filter.propTypes = {
-  takeData: PropTypes.func,
-  filterValue: PropTypes.string,
 };

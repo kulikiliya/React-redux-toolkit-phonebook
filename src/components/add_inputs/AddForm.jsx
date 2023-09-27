@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { FormDiv, Button, Input } from './AddForm.styled';
-import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { addContact } from 'redux/filter/slice';
 
@@ -8,8 +7,6 @@ export const AddForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
   const dispatch = useDispatch();
-
-  console.log(name);
 
   const handleInput = e => {
     const { name, value } = e.target;
@@ -64,8 +61,4 @@ export const AddForm = () => {
       <Button>Add contact</Button>
     </FormDiv>
   );
-};
-
-AddForm.propType = {
-  addContacts: PropTypes.func,
 };

@@ -1,10 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { ContainerDiv, Ul, Button } from './Contacts.styled';
 import { deleteContact } from 'redux/filter/slice';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContact, selectFilter } from 'redux/filter/selectors';
-import { filterContacts } from 'components/utility/filterItem';
+import { filterContacts } from 'components/contatcs/filterItem';
 
 export const Contacts = () => {
   const dispatch = useDispatch();
@@ -27,15 +26,4 @@ export const Contacts = () => {
       </Ul>
     </ContainerDiv>
   );
-};
-
-Contacts.propTypes = {
-  filter: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      name: PropTypes.string,
-      number: PropTypes.string,
-    })
-  ),
-  deleteData: PropTypes.func,
 };
